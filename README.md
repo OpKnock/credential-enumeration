@@ -1,61 +1,38 @@
-```ruby
- ██████╗██████╗ ███████╗██████╗ ███████╗███╗   ██╗██╗   ██╗███╗   ███╗
-██╔════╝██╔══██╗██╔════╝██╔══██╗██╔════╝████╗  ██║██║   ██║████╗ ████║
-██║     ██████╔╝█████╗  ██║  ██║█████╗  ██╔██╗ ██║██║   ██║██╔████╔██║
-██║     ██╔══██╗██╔══╝  ██║  ██║██╔══╝  ██║╚██╗██║██║   ██║██║╚██╔╝██║
-╚██████╗██║  ██║███████╗██████╔╝███████╗██║ ╚████║╚██████╔╝██║ ╚═╝ ██║
- ╚═════╝╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝
-```
+# Credential Enumeration
 
-[![Cybersecurity Projects](https://img.shields.io/badge/Cybersecurity--Projects-Project%20%2321%20intermediate-red?style=flat&logo=github)](https://github.com/CarterPerez-dev/Cybersecurity-Projects/tree/main/PROJECTS/intermediate/credential-enumeration)
-[![Nim](https://img.shields.io/badge/Nim-2.2+-FFE953?style=flat&logo=nim&logoColor=black)](https://nim-lang.org)
-[![License: AGPLv3](https://img.shields.io/badge/License-AGPL_v3-purple.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-T1552-orange?style=flat)](https://attack.mitre.org/techniques/T1552/)
+Educational credential enumeration and exposure detection tool: parses authentication logs, identifies leaked credentials, and reports potential credential compromise. Defensive security research only - operates on log files you own.
 
-> Post-access credential exposure detection for Linux systems, written in Nim.
+## Educational Purpose
 
-*This is a quick overview. Security theory, architecture, and full walkthroughs are in the [learn modules](#learn).*
+**Important:** This tool is intended solely for educational and authorized security research purposes. Credential enumeration is a fundamental skill in understanding access security and breach detection. This tool should only be used on log files you own or have explicit written permission to analyze.
 
-## What It Does
+### Authorized Use Only
 
-- Scans Linux home directories for exposed credentials across 7 categories
-- Detects unprotected SSH keys, plaintext cloud credentials, browser credential stores, shell history secrets, keyrings, Git tokens, and application credentials
-- Classifies findings by severity based on file permissions and exposure risk
-- Reports in terminal with color-coded output or structured JSON for automation
-- Compiles to a single static binary with zero runtime dependencies
+- Only analyze credential enumeration on log files you own or administer
+- Obtain explicit written permission before analyzing any log environment
+- Report any discovered credential exposures or security findings to the appropriate log owners
+- Never analyze log files you do not have explicit authorization for
 
-## Quick Start
+### Educational Value
 
-```bash
-bash install.sh
-credenum
-```
+Understanding credential enumeration helps security professionals:
+- Identify and classify credential exposure patterns and breach indicators
+- Design proper log monitoring and credential detection systems
+- Implement effective access audit and compliance monitoring
+- Build more secure authentication and access management architectures
 
-> [!TIP]
-> This project uses [`just`](https://github.com/casey/just) as a command runner. Type `just` to see all available commands.
->
-> Install: `curl -sSf https://just.systems/install.sh | bash -s -- --to ~/.local/bin`
+### Legal Compliance
 
-## Stack
+- Unauthorized credential enumeration may violate Computer Fraud and Abuse Act (CFAA)
+- Privacy laws and log retention regulations
+- Always obtain explicit written permission before analyzing any log environment
 
-**Language:** Nim 2.2+ (ORC memory management)
+### Responsible Use
 
-**Build:** Just, Nimble, musl (static linking), UPX (compression), zigcc (cross-compilation)
-
-**Testing:** Nim unittest, Docker (integration tests with planted credentials)
-
-## Learn
-
-This project includes step-by-step learning materials covering security theory, architecture, and implementation.
-
-| Module | Topic |
-|--------|-------|
-| [00 - Overview](learn/00-OVERVIEW.md) | Prerequisites and quick start |
-| [01 - Concepts](learn/01-CONCEPTS.md) | Security theory and real-world breaches |
-| [02 - Architecture](learn/02-ARCHITECTURE.md) | System design and data flow |
-| [03 - Implementation](learn/03-IMPLEMENTATION.md) | Code walkthrough |
-| [04 - Challenges](learn/04-CHALLENGES.md) | Extension ideas and exercises |
+- This project is provided for educational purposes only
+- Results should be verified with proper security tools for real-world use
+- Never use discovered techniques against log files you do not have explicit authorization to analyze
 
 ## License
 
-AGPL 3.0
+MIT - This project is free software: you can redistribute it and/or modify it under the terms of the MIT License. See the LICENSE file for full terms and conditions.
